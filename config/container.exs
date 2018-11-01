@@ -9,10 +9,8 @@ use Mix.Config
 config :habits, HabitsWeb.Endpoint,
   http: [port: 4000],
   debug_errors: true,
-  code_reloader: true,
-  check_origin: false,
-  watchers: [node: ["node_modules/brunch/bin/brunch", "watch", "--stdin",
-                    cd: Path.expand("../assets", __DIR__)]]
+  code_reloader: false,
+  check_origin: false
 
 # ## SSL Support
 #
@@ -30,17 +28,6 @@ config :habits, HabitsWeb.Endpoint,
 # configured to run both http and https servers on
 # different ports.
 
-# Watch static and templates for browser reloading.
-config :habits, HabitsWeb.Endpoint,
-  live_reload: [
-    patterns: [
-      ~r{priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$},
-      ~r{priv/gettext/.*(po)$},
-      ~r{lib/habits_web/views/.*(ex)$},
-      ~r{lib/habits_web/templates/.*(eex)$}
-    ]
-  ]
-
 # Do not include metadata nor timestamps in development logs
 config :logger, :console, format: "[$level] $message\n"
 
@@ -54,5 +41,5 @@ config :habits, Habits.Repo,
   username: "postgres",
   password: "postgres",
   database: "habits_dev",
-  hostname: "localhost",
+  hostname: "db",
   pool_size: 10

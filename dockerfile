@@ -23,6 +23,9 @@ RUN mix local.rebar --force
 # install dependencies
 RUN mix deps.get
 
+ARG MIX_ENV=container
+ENV MIX_ENV ${MIX_ENV}
+
 # Compile the project
 RUN mix do compile
 
