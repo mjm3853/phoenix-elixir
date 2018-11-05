@@ -48,6 +48,8 @@ config :logger, :console, format: "[$level] $message\n"
 # in production as building large stacktraces may be expensive.
 config :phoenix, :stacktrace_depth, 20
 
+config :pre_commit, commands: ["test"], verbose: true
+
 # Configure your database
 config :habits, Habits.Repo,
   adapter: Ecto.Adapters.Postgres,

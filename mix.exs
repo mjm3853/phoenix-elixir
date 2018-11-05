@@ -42,7 +42,8 @@ defmodule Habits.Mixfile do
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
       {:plug_cowboy, "~> 1.0"},
-      {:bcrypt_elixir, "~> 1.0"}
+      {:bcrypt_elixir, "~> 1.0"},
+      {:pre_commit, "~> 0.3.4", only: :dev}
     ]
   end
 
