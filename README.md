@@ -14,6 +14,7 @@ Ready to run in production? Please [check our deployment guides](http://www.phoe
 ## References
 
 - Creating an API: https://lobotuerto.com/blog/building-a-json-api-with-phoenix-and-elixir/
+- Git Hooks: https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks
 
 ## Learn more
 

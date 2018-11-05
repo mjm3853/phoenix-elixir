@@ -3,6 +3,6 @@ defmodule HabitsWeb.PageControllerTest do
 
   test "GET /", %{conn: conn} do
     conn = get conn, "/"
-    assert html_response(conn, 200) =~ "Welcome to Habits!"
+    assert html_response(conn, 200) =~ "Welcome to Habitsss!"
   end
 end
