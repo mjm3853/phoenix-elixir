@@ -11,6 +11,8 @@ defmodule HabitsWeb.Router do
 
   pipeline :api do
     plug :accepts, ["json"]
+
+    resources "/users", UserController
   end
 
   scope "/", HabitsWeb do

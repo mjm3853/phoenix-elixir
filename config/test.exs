@@ -16,4 +16,7 @@ config :habits, Habits.Repo,
   password: "postgres",
   database: "habits_test",
   hostname: "localhost",
+  port: "5433",
   pool: Ecto.Adapters.SQL.Sandbox
+
+config :bcrypt_elixir, :log_rounds, 4

@@ -55,4 +55,5 @@ config :habits, Habits.Repo,
   password: "postgres",
   database: "habits_dev",
   hostname: "localhost",
+  port: "5433",
   pool_size: 10
