@@ -4,8 +4,8 @@ FROM elixir:latest
 RUN apt-get update && \
   apt-get install -y postgresql-client inotify-tools
 
-# install node
-RUN curl -sL https://deb.nodesource.com/setup_6.x -o nodesource_setup.sh
+# Install node
+RUN curl -sL https://deb.nodesource.com/setup_10.x -o nodesource_setup.sh
 RUN bash nodesource_setup.sh
 RUN apt-get install nodejs
 
@@ -20,13 +20,17 @@ RUN mix local.hex --force
 # Install rebar
 RUN mix local.rebar --force
 
-# install dependencies
+# Install dependencies
 RUN mix deps.get
 
+# Set the environment
 ARG MIX_ENV=container
 ENV MIX_ENV ${MIX_ENV}
 
 # Compile the project
 RUN mix do compile
+
+# Install node packages
+RUN cd assets && npm install
 
 CMD ["/app/entrypoint.sh"]
