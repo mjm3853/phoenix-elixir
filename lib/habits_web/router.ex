@@ -12,7 +12,6 @@ defmodule HabitsWeb.Router do
   pipeline :api do
     plug :accepts, ["json"]
 
-    resources "/users", UserController
   end
 
   scope "/", HabitsWeb do
@@ -22,7 +21,8 @@ defmodule HabitsWeb.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", HabitsWeb do
-  #   pipe_through :api
-  # end
+  scope "/api", HabitsWeb do
+    pipe_through :api
+    resources "/users", UserController, except: [:new, :edit]
+   end
 end
